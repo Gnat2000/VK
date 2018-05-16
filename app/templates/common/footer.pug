@@ -1,0 +1,90 @@
+footer.footer
+    .container
+        .footer__text All rights reserved. No copy allowed.
+
+<!-- build:js js/vendor.min.js -->
+<!-- bower:js -->
+
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js js/main.min.js -->
+script(src='/js/index.js')
+<!-- endbuild -->
+
+script(id='headerTemplate' type='text/x-handlebars-template')
+    h1 VK- аккаунт: {{first_name}} {{last_name}}
+
+script(id='friendsTemplate' type='text/x-handlebars-template')
+    .friends
+        ul.friends__list
+            | {{#each items}}
+            |     <li class="friends__item">
+            |       <div class="friends__name">{{first_name}} {{last_name}}</div>
+            |       <div class="avatar">
+            |           <img class="avatar__img" src='{{photo_100}}' alt='avatar'/>
+            |       </div>
+            |   {{#if city.title}}
+            |       <div class="friends__city">{{city.title}}</div>
+            |   {{/if}}
+            |   {{#if country.title}}
+            |       <div class="friends__country">{{country.title}}</div>
+            |   {{/if}}
+            |     </li>
+            | {{/each}}
+
+script(id='newsTemplate' type='text/x-handlebars-template')
+    .news
+        ul.news__list
+            |{{#each items}}
+            |   {{#if text}}
+            |       <li class="post__item">
+            |           <div class="post__date">
+            |               <h6 class="post__date-num">{{formatDate date}}</h6>
+            |           </div>
+            |           <div class="post__text">
+            |               <p>{{text}}</p>
+            |           </div>
+            |       </li>
+            |   {{/if}}
+            |   {{#if photos}}
+            |       {{#each photos.items}}
+            |       <li class="post__item">
+            |           <div class="post__date">
+            |               <h6 class="post__date-num">{{formatDate date}}</h6>
+            |           </div>
+            |           <div class="post__text">
+            |               <p>{{text}}</p>
+            |           </div>
+            |           <div class="post__photo">
+            |               <img class="post__image" src='{{photo_604}}' alt='wall_photo'/>
+            |           </div>
+            |       </li>
+            |       {{/each}}
+            |   {{/if}}
+            |{{/each}}
+
+script(id='videoTemplate' type='text/x-handlebars-template')
+    .video
+        ul.video__list
+            |{{#each items}}
+            |    <li class="video__item">
+            |       <div class="video__duration">
+            |           <div class="video__time">
+            |               <h6 class="video__time-dur">{{formatTime duration}}</h6>
+            |           </div>
+            |           <div class="video__date">
+            |               <h6 class="video__date-num">{{formatDate date}}</h6>
+            |           </div>
+            |       </div>
+            |       <a class="video__link" href="{{player}}">
+            |           <img class="video__image" src='{{photo_130}}' alt='avatar'/>
+            |       </a>
+            |       <div class="video__views">
+            |           <h4 class="video__views-text">{{views}} просмотров</h4>
+            |       </div>
+            |       <div class="video__display">
+            |           <h2 class="video__title">{{title}}</h2>
+            |       </div>
+            |    </li>
+            |{{/each}}

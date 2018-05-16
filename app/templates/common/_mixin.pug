@@ -1,0 +1,5 @@
+mixin svg(name, size)
+    - var size = size || 48;
+
+    svg(class="icon-" + name viewBox='0 0 ' + size + ' ' + size width=size height=size)
+        use(width =size height=size xlink:href=`img/${name}.svg#${name}` overflow="visible")

@@ -1,0 +1,19 @@
+header.header
+    .container
+        .header__top
+            a.logo(href='https://vk.com')
+                img(src='img/VK.png', alt='Вконтакте').logo__img
+                .logo__text Вконтакте
+            .head
+    .container
+        .divider
+            .divider__text Данные твоего аккаунта
+    .container
+        nav.nav
+            ul.nav__list
+                each val, key in {'video':'Видео', 'friends':'Друзья', 'news':'Новости'}
+                    li.nav__item(data-route= key)
+                        a(href="#" data-route= key class='nav__link')
+                            span.nav__icon
+                                +svg(key, 512)
+                            span.nav__title= val

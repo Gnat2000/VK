@@ -1,0 +1,7 @@
+{
+  "name": "vk",
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "modernizer": "^2.8.2"
+  }
+}
